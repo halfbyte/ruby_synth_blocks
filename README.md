@@ -19,6 +19,17 @@ The code is super unoptimised, as it is written for learning purposes. This mean
 takes a couple of hours to render. I'm relatively sure that there are some low hanging fruits for optimisation, especially in the sequencer code that does a lot of
 useless lookups on quite large data structures that hold the automation data, but I haven't yet gotten around to take a look at it.
 
+## Opal
+
+Since my presentation runs in a browser I thought it could be fun to try to make this library run in Opal and thus in the browser.
+
+It works but obviously long running code that will block the main thread is not something that makes browsers (and users) happy, but for small demonstrations, it's probably good enough.
+
+There are two modules that do not work:
+
+- GVerb uses prime numbers but Opal does not implement Stdlib::Prime.
+- To prevent adding WaveFile as an additional dependency (and because it doesn't make a ton of sense for my usecase), WaveWriter is not functional in Opal.
+
 ## Examples
 
 The easiest way to test the example code is to check out the repo and then execute the code directly.
