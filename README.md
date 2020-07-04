@@ -19,6 +19,22 @@ The code is super unoptimised, as it is written for learning purposes. This mean
 takes a couple of hours to render. I'm relatively sure that there are some low hanging fruits for optimisation, especially in the sequencer code that does a lot of
 useless lookups on quite large data structures that hold the automation data, but I haven't yet gotten around to take a look at it.
 
+## Examples
+
+The easiest way to test the example code is to check out the repo and then execute the code directly.
+
+Each example has a line on the bottom:
+
+```ruby
+SynthBlocks::Core::WaveWriter.write_if_name_given(out)
+```
+
+This will write out a wave file if you run the file with a wav-file as the last argument like so:
+
+```bash
+ruby -Ilib examples/waveshaper_demo.rb test.wav
+```
+
 ## License
 
 All code here is licensed under the AGPL 3.0 license as documented at [LICENSE](LICENSE) unless stated otherwise.
