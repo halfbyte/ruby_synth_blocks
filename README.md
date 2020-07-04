@@ -1,0 +1,24 @@
+# Synth Blocks
+
+Synth blocks is a proper extraction of the synthesizer/sequncer I built for my [Ruby Synth](https://rubysynth.fun) talk an Euruko and RubyConf.by
+
+It is a gem and can be used for writing electronic music in ruby. See [examples](examples/) for more info on how to use this.
+
+## Blocks
+
+The code is divided into 7 sections:
+
+- Core contains things like Oscillators and filters, a base class for all generators as well as a class that uses the wavefile gem to write out sound files
+- Mod contains modulators, currently two Envelopes
+- Drum and Synth contains Drum and Synthesizer generators respectively
+- Fx contains Audio effects such as Reverb, Chorus, Delay, Waveshaper and more
+- Mixer contains utilities to build a mixing system
+- Sequencer contains a DSL for building songs
+
+The code is super unoptimised, as it is written for learning purposes. This means, for example, that the full song contained in [examples/a_song.rb](examples/a_song.rb) 
+takes a couple of hours to render. I'm relatively sure that there are some low hanging fruits for optimisation, especially in the sequencer code that does a lot of
+useless lookups on quite large data structures that hold the automation data, but I haven't yet gotten around to take a look at it.
+
+## License
+
+All code here is licensed under the AGPL 3.0 license as documented at [LICENSE](LICENSE) unless stated otherwise.
