@@ -56,26 +56,26 @@ module SynthBlocks
             return @value = sustain
           end
         else # release
-          if t <= attack # when released in attack phase
+          if released <= attack # when released in attack phase
             attack_level = linear(@start_value, 1, attack, released)
-            return linear(attack_level, 0, release, t - released)
+            return [linear(attack_level, 0, release, t - released), 0].max
           end
-          if t > attack && t < attack_decay # when released in decay phase
+          if released > attack && released <= attack_decay # when released in decay phase
             decay_level = linear(1.0, sustain, decay, released - attack)
-            return @value = linear(decay_level, 0, release, t - released)
+            return @value = [linear(decay_level, 0, release, t - released), 0].max
           end
-          if t >= attack_decay && t < released + release # normal release
-            return @value = linear(sustain, 0, release, t - released)
-          end
-          if t >= released + release # after release
-            return @value = 0.0
+          if released > attack_decay  # normal release
+            return @value = [linear(sustain, 0, release, t - released), 0].max
           end
         end
+        0.0
       end
 
       private
 
       def linear(start, target, length, time)
+        return start if time == 0
+        return target if length == 0
         (target - start) / length * time + start
       end
     end

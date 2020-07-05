@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'synth_blocks'
-  s.version     = '1.0.1'
+  s.version     = '1.0.2'
   s.licenses    = ['AGPL-3.0-only']
   s.summary     = "Building blocks for making music in pure ruby"
   s.description = "A collection of building blocks for making music in pure ruby"
