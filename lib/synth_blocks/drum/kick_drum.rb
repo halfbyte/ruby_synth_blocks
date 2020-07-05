@@ -21,10 +21,10 @@ module SynthBlocks
         super(sfreq, mode: :polyphonic)
         @preset = {
           pitch_attack: 0.001,
-          pitch_decay: 0.05,
+          pitch_decay: 0.02,
           amp_attack: 0.001,
-          amp_decay: 0.1,
-          base_frequency: 50,
+          amp_decay: 0.15,
+          base_frequency: 55,
           pitch_mod: 200
         }.merge(preset)
         @oscillator = SynthBlocks::Core::Oscillator.new(@sampling_frequency)

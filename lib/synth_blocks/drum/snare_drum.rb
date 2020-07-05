@@ -23,19 +23,20 @@ module SynthBlocks
       def initialize(sfreq, preset = {})
         super(sfreq, mode: :polyphonic)
         @preset = {
-          flt_frequency: 4000,
-          flt_envmod: 6000,
           flt_attack: 0.001,
-          flt_decay: 0.1,
-          flt_Q: 2,
           noise_amp_attack: 0.001,
-          noise_amp_decay: 0.15,
           noise_vol: 0.5,
           drum_vol: 0.3,
-          base_frequency: 200,
-          pitch_mod: 200,
-          pitch_decay: 0.07
 
+          base_frequency: 110,
+          pitch_mod: 440,
+          pitch_decay: 0.03,
+          amp_decay: 0.15,
+          flt_Q: 1.1,
+          flt_envmod: 2000,
+          flt_frequency: 7000,
+          flt_decay: 0.1,
+          noise_amp_decay: 0.2
         }.merge(preset)
         @drum = SynthBlocks::Drum::KickDrum.new(sfreq, @preset)
         @filter = SynthBlocks::Core::StateVariableFilter.new(sfreq)
