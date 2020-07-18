@@ -1,5 +1,5 @@
 require 'test_helper'
-require_relative '../lib/synth_blocks/mod/adsr_2'
+require_relative '../lib/synth_blocks/mod/adsr'
 
 module SynthBlocks
   module Mod
