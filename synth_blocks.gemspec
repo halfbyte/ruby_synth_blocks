@@ -2,7 +2,7 @@ require 'rake'
 
 Gem::Specification.new do |s|
   s.name        = 'synth_blocks'
-  s.version     = '1.0.3'
+  s.version     = '2.0.0'
   s.licenses    = ['AGPL-3.0-only']
   s.summary     = "Building blocks for making music in pure ruby"
   s.description = "A collection of building blocks for making music in pure ruby"
@@ -14,7 +14,7 @@ Gem::Specification.new do |s|
                     'LICENSE',
                   ].to_a
   s.homepage    = 'https://rubysynth.fun'
-  s.metadata    = { "source_code_uri" => "https://github.com/halfbyte/synth_blocks" }
+  s.metadata    = { "source_code_uri" => "https://github.com/halfbyte/ruby_synth_blocks" }
 
   s.add_development_dependency 'minitest', '~> 5.14'
   s.add_development_dependency 'rake', '~> 13.0'
