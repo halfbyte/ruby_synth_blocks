@@ -1,5 +1,6 @@
 require_relative 'synth_blocks/core/sound'
-require_relative 'synth_blocks/mod/adsr'
+# require_relative 'synth_blocks/mod/adsr'
+require_relative 'synth_blocks/mod/adsr_2'
 require_relative 'synth_blocks/fx/chorus'
 require_relative 'synth_blocks/fx/compressor'
 require_relative 'synth_blocks/fx/delay'

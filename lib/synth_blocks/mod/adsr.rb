@@ -3,7 +3,7 @@ module SynthBlocks
     ##
     # Implementation of a linear ADSR envelope generator with a tracking
     # value so that envelope restarts don't click
-    class Adsr
+    class AdsrOld
       ##
       # attack time in seconds
       attr_accessor :attack
