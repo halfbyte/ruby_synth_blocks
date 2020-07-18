@@ -44,7 +44,7 @@ module SynthBlocks
         @last_t = t
         if released
           return 0 if @done
-          @value += -(@sustain/@release) * (t - released)
+          @value += -(@sustain/@release) * (delta)
           if @value <= 0
             @value = 0
             @done = true
